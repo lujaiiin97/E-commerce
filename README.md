@@ -26,15 +26,20 @@ Also, you can read the documentaion about Laravel passport in [Laravel passport]
 ## Database Setup
 #### Update .env file
 
-You have to change the database name to yours, 
+You have to generate a key,
 ```bash
-DB_DATABASE=E-commerce
+php artisan key:generate
  ```
+  then change the database name to yours database, 
+ ```bash
+ DB_DATABASE=E-commerce
+  ```
+
 Then run this command 
 ```bash
 php artisan migrate
  ```
- To upload the database to your local servr.
+ To upload the database to your local server.
 
 ## Running the server
 To run the server, execute:
