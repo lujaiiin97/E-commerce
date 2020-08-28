@@ -17,7 +17,7 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('User_id');
-            $table->unsignedBigInteger('Product_id');
+          
             $table->integer('Total_price');
 
             $table->foreign('User_id')
@@ -26,10 +26,7 @@ class CreateCartsTable extends Migration
            ->onDelete('cascade');
 
 
-           $table->foreign('Product_id')
-           ->references('id')
-           ->on('product')
-          ->onDelete('cascade');
+          
         });
     }
 

@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::post('/login','MerchantController@login');
+Route::post('/register','MerchantController@register');
+Route::post('/Add_product','ProductController@Add_product');
+Route::post('/create_store','StoreController@create_store');
+Route::post('/create_cart','CartController@create_cart');
+Route::post('/Add_to_cart','CartController@Add_to_cart');
+
+
+Route::group(['middleware' => ['CheckMerchantToken:merchant']], function () {
+
+});
