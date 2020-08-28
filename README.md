@@ -1,9 +1,7 @@
 
-#E-Commerce website API Backend
+## E-Commerce API 
 
-This project is about a webpage to manage the trivia app and play the game. 
-The project's plan was to develop an API and test suite that would implement a few features and functionality.
-
+This project was built to develop an API that would implement a simple E-commerce website.
 
 ## Getting Started
 
@@ -11,81 +9,38 @@ The project's plan was to develop an API and test suite that would implement a f
 
 
 ### Installing Dependencies
-#### composer 3.7
 
-Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
-
-
-#### Virtual Enviornment
-
-We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
-
-#### PIP Dependencies
-
-Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
-
+#### Set up the project locally 
+git clone https://github.com/lujaiiin97/E-coomerce.git
 ```bash
-pip install -r requirements.txt
-```
+ install composer
+ ```
+#### install Dependencies
+Once you install the composer, run 
+```bash
+php artisan passport:install
+ ```
 
-This will install all of the required packages we selected within the `requirements.txt` file.
-
-##### Key Dependencies
-
-- [Flask](http://flask.pocoo.org/)  is a lightweight backend microservices framework. Flask is required to handle requests and responses.
-
-- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py. 
-
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
+Also, you can read the documentaion about Laravel passport in [Laravel passport](https://laravel.com/docs/7.x/passport)
 
 ## Database Setup
-With Postgres running, restore a database using the trivia.psql file provided. From the backend folder in terminal run:
+#### Update .env file
+
+You have to change the database name to yours, 
 ```bash
-psql trivia < trivia.psql
-```
+DB_DATABASE=E-commerce
+ ```
+Then run this command 
+```bash
+php artisan migrate
+ ```
+ To upload the database to your local servr.
 
 ## Running the server
-
-From within the `backend` directory first ensure you are working using your created virtual environment.
-
 To run the server, execute:
 
 ```bash
-export FLASK_APP=flaskr
-export FLASK_ENV=development
-flask run
-```
-
-Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
-
-Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` directory and the `__init__.py` file to find the application. 
-NOTE: Make sure you create a database named trivia in the PostgreSQL server before running the tests.
-API Documentation
-
-## Front-End 
-### Installing Dependencies
-
-#### Installing Node and NPM
-
-This project depends on Nodejs and Node Package Manager (NPM). Before continuing, you must download and install Node (the download includes NPM) from [https://nodejs.com/en/download](https://nodejs.org/en/download/).
-
-#### Installing project dependencies
-
-This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository. After cloning, open your terminal and run:
-
-```bash
-npm install
-```
-
->_tip_: **npm i** is shorthand for **npm install**
-
-
-## Running the API
-
-
-Open [http://localhost:9000](http://localhost:3000) to view it in the browser.
-```bash
-npm start
+php artisan serve
 ```
 
 ## API documentation
@@ -95,30 +50,15 @@ npm start
  - Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:8000/
  - Authentication: This version does not require authentication or API keys.
  
- ### Error Handling
- 
- Errors are returned as JSON in the following format:
- 
- ```
- {
-    "success": False,
-    "error": 404,
-    "message": "resource not found"
-}
 
-```
-The API will return three types of errors:
-
-    400 – bad request
-    404 – resource not found
-    422 – unprocessable
-    405 - method not allowed
 
 ### Endpoints
 
 #### POST /Register
  - General: 
-    - To register new merchant
+    - This method To register new merchant
+    - Returns the status, merchant data, merchant token, and message
+    - 
  - Sample: ```  http://127.0.0.1:8000/api/register ```
  - Request:
 ```
@@ -146,7 +86,9 @@ The API will return three types of errors:
 ```
 #### POST /Login
  - General: 
-    - To login existing merchant
+    - This method To login existing 
+    - Returns the status, merchant data, merchant token, and message
+
  - Sample: ```  http://127.0.0.1:8000/api/Login ```
  - Request:
 ```
@@ -172,20 +114,11 @@ The API will return three types of errors:
     "message": "Logged in successfully."
 }
 ```
- - General: 
-    - To login existing merchant
- - Sample: ```  http://127.0.0.1:8000/api/register ```
- - Request:
-```
-{
-    "Password": "Lujain123",
-    "Email": "lujain_alharbi@gmail.com"
-}
-```
-
 #### POST /create_store
  - General: 
-    - To login existing merchant
+    - Create new store for a speceific merchant
+    - Returns the status, store data, and message
+
  - Sample: ```  http://127.0.0.1:8000/api/create_store ```
  - Request:
 ```
@@ -211,60 +144,68 @@ The API will return three types of errors:
  
  #### POST /Add_product
  - General: 
-    - To login existing merchant
- - Sample: ```  http://127.0.0.1:8000/api/create_store ```
+     - Add new product for a speceific store
+    - Returns the status, product data, and message.
+ - Sample: ```  http://127.0.0.1:8000/api/Add_product ```
  - Request:
 ```
-{ "Name": "Lujain_store",
-  "Merchant_id": "2"
+{  "Name": "Pink bag",
+        "Description": "its a cotton bag",
+        "Price": "25",
+        "Store_id":4
+
         }
  ```
   - Response:
 ```
 {
+
     "data": {
-        "Name": "Lujain_store",
-        "Merchant_id": "2",
-        "updated_at": "2020-08-28T17:18:59.000000Z",
-        "created_at": "2020-08-28T17:18:59.000000Z",
-        "id": 4
+        "Name": "Pink bag",
+        "Description": "its a cotton bag",
+        "Price": "25",
+        "Store_id": 4,
+        "updated_at": "2020-08-28T17:34:33.000000Z",
+        "created_at": "2020-08-28T17:34:33.000000Z",
+        "id": 2
     },
     "status": true,
-    "message": "The store has been created successfully."
+    "message": "The product has been created successfully."
+
 }
 
 ```
  
- #### POST /Createcart
- - General: 
-    - To login existing merchant
- - Sample: ```  http://127.0.0.1:8000/api/create_store ```
- - Request:
-```
-{ "Name": "Lujain_store",
-  "Merchant_id": "2"
-        }
- ```
+ #### POST /create_cart
+- General:
+ - since the guests aren't registered, i assumed that each cart will 
+   be assigned to new guest data to use it in another function. Also, to save the guest data.
+    - Returns the status, cart data with the user id, and message.
+   
+ - Sample: ```  http://127.0.0.1:8000/api/create_cart ```
+
   - Response:
 ```
 {
     "data": {
-        "Name": "Lujain_store",
-        "Merchant_id": "2",
-        "updated_at": "2020-08-28T17:18:59.000000Z",
-        "created_at": "2020-08-28T17:18:59.000000Z",
-        "id": 4
+        "User_id": 8,
+        "Total_price": 0,
+        "updated_at": "2020-08-28T19:48:49.000000Z",
+        "created_at": "2020-08-28T19:48:49.000000Z",
+        "id": 8
     },
     "status": true,
-    "message": "The store has been created successfully."
+    "message": "The cart has been created successfully."
+
 }
 
 ```
 
   #### POST /Add_to_cart
  - General: 
-    - To login existing merchant
- - Sample: ```  http://127.0.0.1:8000/api/create_store ```
+    - Add new product to specific cart 
+    - for each call to this API method, the `total price` will increase as much as there is a products to this cart
+     - Sample: ```  http://127.0.0.1:8000/api/Add_to_cart ```
  - Request:
 ```
 {
@@ -286,7 +227,6 @@ The API will return three types of errors:
     "status": true,
     "message": "The product has been added to the cart successfully."
 }
-
 
  ```
  
