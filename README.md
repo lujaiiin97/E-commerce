@@ -5,14 +5,13 @@ This project was built to develop an API that would implement a simple E-commerc
 
 ## Getting Started
 
-## Back-End
-
-
 ### Installing Dependencies
 
 #### Set up the project locally 
-git clone https://github.com/lujaiiin97/E-coomerce.git
+Firs of all, Excute these commans.
+
 ```bash
+git clone https://github.com/lujaiiin97/E-coomerce.git
  install composer
  ```
 #### install Dependencies
