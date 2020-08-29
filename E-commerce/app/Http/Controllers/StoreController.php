@@ -17,12 +17,14 @@ use App\product;
 class StoreController extends Controller
 {
    
+    //This method to create new store for a merchant.
     public function create_store(Request $request){
             $data=array(); $message="";  $status=TRUE;   
+
+            //The validate method is to make sure that the store name is unique
             $request->validate([
             'Name' => 'required|unique:store', 
         ]);
-
          $Store = new store;
          $Store->Name = $request->Name;
          $Store->Merchant_id =  $request->Merchant_id;

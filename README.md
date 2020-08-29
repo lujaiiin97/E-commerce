@@ -182,29 +182,30 @@ php artisan serve
  
  #### POST /create_cart
 - General:
- - since the guests aren't registered, i assumed that each cart will 
-   be assigned to new guest data to use it in another function. Also, to save the guest data.
-    - Returns the status, cart data with the user id, and message.
+ - To  create new cart for guests
+ - Returns the status, cart data with the user id, and message.
    
  - Sample: ```  http://127.0.0.1:8000/api/create_cart ```
 
   - Response:
 ```
 {
-    "data": {
-        "User_id": 8,
-        "Total_price": 0,
-        "updated_at": "2020-08-28T19:48:49.000000Z",
-        "created_at": "2020-08-28T19:48:49.000000Z",
-        "id": 8
+    "0": {
+        "data": {
+            "User_id": 9,
+            "Total_price": 0,
+            "updated_at": "2020-08-29T07:28:46.000000Z",
+            "created_at": "2020-08-29T07:28:46.000000Z",
+            "id": 9
+        },
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjkyM2Q5YmYwYzI4MDc3M2M5M2ExNTIzNzI4MzRmYTAzNzFjZmZjZGE3Yzc1ZDVjMGFkMmFlNjNhOTFiYzM4MzIxYTY5OWFkMWY3NmNjY2IiLCJpYXQiOjE1OTg2ODYxMjYsIm5iZiI6MTU5ODY4NjEyNiwiZXhwIjoxNjMwMjIyMTI2LCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.p-fU1GOxza6r1zeKAIwxeyiY2S1wMG5uvVvltsuTmqM3xwpLWXmnUoCuxHYyXGOb7NvAdMqljFrraN0HI4cTCs-QJDLLXd0syfDNbkH7vXqsh-teEZhEVsPvdVP9XUNUCN74P5aaJB_86mz3_CYYHaBilO3PDO-fujefksqmEoK_hW90s_Q_medVPCC2v6154qOBDBgag0iPSozy79mJAChYSQ5EV4e4Y_TqHKwn14f00OV4gFvVJr8p2HAUk20StZE49qVI-QayPPOWYDHzx8iSozQBD3ylNmAL9r3oa5q6TdVfFquTJU6c4E_V7_mgyuZbs3mtuBAnA6Su5Rj7zYYbrDt3ZHt_Fe85ZrhhAQxE9dcYKeai12Ljfxw2W6hUnLdCDucPACPMOqtJ6xNYbOjBF5uWSMdRlFfMF7WazqYBUgoU89wgEVT608oAbgPdOPdX1DVyq8J5hxfLuwHiXtn53fsmPFbsykOC65apUz0yStiZ6pw6sPwk72vCEz2k_MyplPtKhYfC7j_Wnf0N5NWNPjuMVNXZ1D5VjF2HqoJOi6jMtxchsgJtmQsPdKjCReHYlW3Hm6IE3G3nopQtLKWQTToW0MprcYOMd-M9ExPnTBB_JE9VQKMTgY3ZKCJQM8MrKeyIQVOvmo2LrDopCC5oASlbxxkrqz9Xtn7S4u0"
     },
     "status": true,
     "message": "The cart has been created successfully."
-
-}
-
 ```
-
+- clarification
+ - since the guests aren't registered, i assumed that each cart will 
+   be assigned to new guest data to use it in another function. Also, to save the guest data.
   #### POST /Add_to_cart
  - General: 
     - Add new product to specific cart 
