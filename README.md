@@ -236,4 +236,4 @@ php artisan serve
  ```
  
 
-❮img src="images/ERD.jpg" ❯
+![](images/ERD.jpg)
