@@ -12,7 +12,7 @@ Firs of all, Excute these commans.
 
 ```bash
 git clone https://github.com/lujaiiin97/E-coomerce.git
- install composer
+install composer
  ```
 #### install Dependencies
 Once you install the composer, run 
@@ -52,8 +52,7 @@ php artisan serve
 ### Getting Started
 
  - Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:8000/
- - Authentication: This version does not require authentication or API keys.
- 
+
 
 
 ### Endpoints
@@ -90,7 +89,7 @@ php artisan serve
 ```
 #### POST /Login
  - General: 
-    - This method To login existing 
+    - This method to login existing merchant
     - Returns the status, merchant data, merchant token, and message
 
  - Sample: ```  http://127.0.0.1:8000/api/Login ```
@@ -153,7 +152,8 @@ php artisan serve
  - Sample: ```  http://127.0.0.1:8000/api/Add_product ```
  - Request:
 ```
-{  "Name": "Pink bag",
+{ 
+        "Name": "Pink bag",
         "Description": "its a cotton bag",
         "Price": "25",
         "Store_id":4
