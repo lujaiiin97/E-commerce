@@ -61,7 +61,7 @@ php artisan serve
  - General: 
     - This method To register new merchant
     - Returns the status, merchant data, merchant token, and message
-    - 
+
  - Sample: ```  http://127.0.0.1:8000/api/register ```
  - Request:
 ```
@@ -182,8 +182,8 @@ php artisan serve
  
  #### POST /create_cart
 - General:
- - To  create new cart for guests
- - Returns the status, cart data with the user id, and message.
+  - To  create new cart for guests
+  - Returns the status, cart data with the user id, and message.
    
  - Sample: ```  http://127.0.0.1:8000/api/create_cart ```
 
@@ -210,7 +210,7 @@ php artisan serve
  - General: 
     - Add new product to specific cart 
     - for each call to this API method, the `total price` will increase as much as there is a products to this cart
-     - Sample: ```  http://127.0.0.1:8000/api/Add_to_cart ```
+ - Sample: ```  http://127.0.0.1:8000/api/Add_to_cart ```
  - Request:
 ```
 {
