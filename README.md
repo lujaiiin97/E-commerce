@@ -235,3 +235,5 @@ php artisan serve
 
  ```
  
+
+❮img src="images/ERD.jpg" ❯
