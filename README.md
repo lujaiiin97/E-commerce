@@ -234,6 +234,3 @@ php artisan serve
 
  ```
  
-
- 
-# E-commerce
