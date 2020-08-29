@@ -235,3 +235,5 @@ php artisan serve
 
  ```
  
+
+![](images/ERD.jpg)
